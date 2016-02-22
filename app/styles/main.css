@@ -35,13 +35,13 @@ body {
   border-right: 52px solid transparent;
 }
 
-.mode-box {
-  border-left: 4px solid blue;
-  border-right: 4px solid blue;
-  border-bottom: 4px solid blue;
-  border-radius: 10px;
+.menu {
   width: 70%;
   margin: 0 auto;
+  border-left: 3px solid blue;
+  border-bottom: 3px solid blue;
+  border-right: 3px solid blue;
+  border-radius: 7px;
 }
 
 .modes {
@@ -49,6 +49,19 @@ body {
   display: inline;
 }
 
+.modes.hidden {
+  display: none;
+}
+
 .offset {
   left: 55px;
+}
+
+.subItem {
+  width: 50px;
+  display: inline-block;
+}
+
+.subItem.hidden {
+  display: none;
 }

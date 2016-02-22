@@ -19,6 +19,7 @@ var BoardView = Backbone.View.extend({
   },
   render: function(){
     var self = this;
+    self.children = [];
     self.buildGrid();
     var compiled = Mustache.render(menuTemplate, this.model.attributes);
     $('.js-size').html(compiled);
@@ -28,9 +29,11 @@ var BoardView = Backbone.View.extend({
     }, this);
     _(this.modes.models).each(function(modeModel) {
       var modeView = new ModeView({
-        model: modeModel
+        model: modeModel,
+        parent: self
       });
       $('.js-modes', self.el).append(modeView.render().el);
+      self.children.push(modeView);
     });
   },
   buildGrid: function() {

@@ -4,4 +4,5 @@ var ModeModel = Backbone.Model.extend({
     this.set({url: properties['url']});
     this.set({subItems: properties['subItems']});
   }
+
 });

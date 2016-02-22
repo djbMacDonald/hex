@@ -14,7 +14,8 @@ var BoardModel = Backbone.Model.extend({
         'shotgun',
         'shovel',
         'sword',
-        'knight'
+        'knight',
+        'back'
       ]},
       {name: 'walls', url: 'b', subItems: [
         'solid',

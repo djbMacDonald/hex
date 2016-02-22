@@ -11,11 +11,24 @@ var SubItemView = Backbone.View.extend({
 
   render: function(){
     var compiled = Mustache.render(subTemplate, this.model.attributes);
-    this.$el.html(compiled).addClass('subItem');
+    var subClass = Mustache.render(subClassTemplate, this.model.attributes);
+    this.$el.html(compiled).attr('class', subClass);
     return this;
   },
 
+  doStuff: function() {
+    console.log('asd');
+  },
+
   select: function(){
-    this.model.set({checked: !this.model.get('checked')});
+    _(this.model.collection.models).each(function(model){
+      model.set({checked: false});
+    });
+    this.model.set({checked: true});
+
+    if (this.$el.hasClass('js-back')) {
+      this.doStuff();
+    };
   }
+
 });
