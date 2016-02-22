@@ -1,5 +1,9 @@
-var hex_template = '{{x}} {{y}}';
+var hexTemplate = 'x: {{x}} y: {{y}}';
 
-var hex_class_template =
+var hexClassTemplate =
 'hex ' +
 '{{#offset}} offset {{/offset}}';
+
+var menuTemplate =
+'<input type="number" value ="{{height}}" class="js-height">' +
+'<input type="number" value ="{{width}}" class="js-width">';

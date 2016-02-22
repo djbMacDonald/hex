@@ -9,9 +9,9 @@ var HexView = Backbone.View.extend({
   },
 
   render: function(){
-    var compiled = Mustache.render(hex_template, this.model.attributes);
-    var hex_class = Mustache.render(hex_class_template, this.model.attributes);
-    this.$el.html(compiled).addClass(hex_class);
+    var compiled = Mustache.render(hexTemplate, this.model.attributes);
+    var hexClass = Mustache.render(hexClassTemplate, this.model.attributes);
+    this.$el.html(compiled).addClass(hexClass);
     return this;
   },
 

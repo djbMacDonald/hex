@@ -1,3 +1,7 @@
+body {
+  white-space: nowrap;
+}
+
 .hex:before {
   content: "";
   width: 0; height: 0;
