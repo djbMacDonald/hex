@@ -1,4 +1,4 @@
-var hexTemplate = 'x: {{x}} y: {{y}}';
+var hexTemplate = '-----x: {{trueX}} y: {{y}} {{#clicked}} A {{/clicked}}';
 
 var hexClassTemplate =
 'hex ' +
@@ -7,3 +7,7 @@ var hexClassTemplate =
 var menuTemplate =
 '<input type="number" value ="{{height}}" class="js-height">' +
 '<input type="number" value ="{{width}}" class="js-width">';
+
+var modeTemplate = '{{name}} {{#checked }} !!! {{/checked}}';
+
+var subTemplate = '{{name}} {{#checked}} !!! {{/checked}}';

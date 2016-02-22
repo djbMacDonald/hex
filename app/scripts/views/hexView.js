@@ -1,10 +1,10 @@
 var HexView = Backbone.View.extend({
   events: {
-    'click':  'swap',
+    'click':  'modify',
   },
 
   initialize: function(){
-    _.bindAll(this, 'render', 'swap');
+    _.bindAll(this, 'render', 'modify');
     this.model.bind('change', this.render);
   },
 
@@ -15,11 +15,7 @@ var HexView = Backbone.View.extend({
     return this;
   },
 
-  swap: function(){
-    var swapped = {
-      x: this.model.get('y'),
-      y: this.model.get('x')
-    };
-    this.model.set(swapped);
+  modify: function(){
+    this.model.set({clicked: !this.model.get('clicked')});
   }
 });

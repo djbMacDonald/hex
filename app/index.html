@@ -25,8 +25,10 @@
     <![endif]-->
 
     <div class="js-board">
-        <div class="js-menu"></div>
-        <div class="js-grid"></div>
+      <div class="js-size"></div>
+      <div class="js-modes mode-box"></div>
+      <div class="js-subs sub-mode-box"></div>
+      <div class="js-grid"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -41,9 +43,15 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/templates/templates.js"></script>
+    <script src="scripts/models/subItemModel.js"></script>
+    <script src="scripts/models/modeModel.js"></script>
     <script src="scripts/models/hexModel.js"></script>
     <script src="scripts/models/boardModel.js"></script>
+    <script src="scripts/collections/subItemCollection.js"></script>
+    <script src="scripts/collections/modeCollection.js"></script>
     <script src="scripts/collections/gridCollection.js"></script>
+    <script src="scripts/views/subItemView.js"></script>
+    <script src="scripts/views/modeView.js"></script>
     <script src="scripts/views/hexView.js"></script>
     <script src="scripts/views/boardView.js"></script>
     <script src="scripts/main.js"></script>

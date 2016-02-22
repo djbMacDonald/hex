@@ -1,3 +1,3 @@
-  var GridCollection = Backbone.Collection.extend({
-    model: HexModel
-  });
+var GridCollection = Backbone.Collection.extend({
+  model: HexModel
+});

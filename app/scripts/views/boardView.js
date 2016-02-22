@@ -6,23 +6,35 @@ var BoardView = Backbone.View.extend({
   },
   initialize: function(){
     _.bindAll(this, 'render', 'addHex', 'appendHex');
+    var self = this;
     this.model = new BoardModel();
     this.model.bind('change', this.render);
-    this.collection = new GridCollection();
+    this.grid = new GridCollection();
+    this.modes = new ModeCollection();
+    _(this.model.get('modes')).each(function(mode) {
+      var modeModel = new ModeModel(mode);
+      self.modes.add(modeModel);
+    });
     this.render();
   },
   render: function(){
     var self = this;
     self.buildGrid();
     var compiled = Mustache.render(menuTemplate, this.model.attributes);
-    $('.js-menu').html(compiled);
+    $('.js-size').html(compiled);
     $('.js-grid').empty();
-    _(this.collection.models).each(function(hexModel){
+    _(this.grid.models).each(function(hexModel){
       self.appendHex(hexModel);
     }, this);
+    _(this.modes.models).each(function(modeModel) {
+      var modeView = new ModeView({
+        model: modeModel
+      });
+      $('.js-modes', self.el).append(modeView.render().el);
+    });
   },
   buildGrid: function() {
-    this.collection.reset();
+    this.grid.reset();
     for(var i = 0; i < this.model.get('height'); i++) {
       for(var j = 0; j < this.model.get('width'); j++) {
         this.addHex(j, i);
@@ -38,7 +50,7 @@ var BoardView = Backbone.View.extend({
   },
   addHex: function(i, j){
     var hexModel = new HexModel([i, j]);
-    this.collection.add(hexModel);
+    this.grid.add(hexModel);
   },
   appendHex: function(hexModel){
     var hexView = new HexView({
