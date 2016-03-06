@@ -15,7 +15,8 @@ var ModeView = Backbone.View.extend({
     });
     _(this.subs.models).each(function(subModel) {
       var subView = new SubItemView({
-        model: subModel
+        model: subModel,
+        parent: self
       });
       $('.js-subs').append(subView.render().el);
     });
