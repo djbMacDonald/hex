@@ -1,12 +1,12 @@
-var hexTemplate = '({{trueX}}, {{y}}) {{#clicked}} A {{/clicked}} {{text}}';
+var hexTemplate = '&#x2B22;';
 
 var hexClassTemplate =
 'hex ' +
-'{{#offset}} offset {{/offset}} {{piece}}';
+'{{#offset}} offset {{/offset}}';
 
 var menuTemplate =
 'rows: <input type="number" value ="{{height}}" class="js-height">' +
-'columns: <input type="number" value ="{{width}}" class="js-width">';
+' columns: <input type="number" value ="{{width}}" class="js-width">';
 
 var modeClassTemplate = 'modes {{#hidden}} hidden {{/hidden}} mode-{{name}} {{#active}} active {{/active}}';
 

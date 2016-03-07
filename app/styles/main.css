@@ -3,196 +3,190 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   user-select: none;
+  cursor: pointer;
 }
 
 input {
-  width: 30px;
+  width: 10%;
 }
 
 body {
   white-space: nowrap;
 }
 
-.hex:before {
-  content: "";
-  width: 0; height: 0;
-  border-bottom: 30px solid #6C6;
-  border-left: 52px solid transparent;
-  border-right: 52px solid transparent;
-  position: absolute;
-  top: -30px;
-}
-
 .hex {
+  font-size: 10em;
   display: inline-block;
-  margin-top: 30px;
-  width: 104px;
-  height: 60px;
-  background-color: #6C6;
   position: relative;
-  margin-right: 6px;
-  margin-bottom: 6px;
-  cursor: pointer;
-  color: gray;
+  color: #6C6;
+  margin-left: -.05em;
+  margin-bottom: -.25em;
+  margin-top: -.25em;
 }
 
-.hex:after {
-  content: "";
-  width: 0;
+.grid {
   position: absolute;
-  left: 0;
-  bottom: -30px;
-  border-top: 30px solid #6C6;
-  border-left: 52px solid transparent;
-  border-right: 52px solid transparent;
+  top: 15%;
+  border: .3em solid black;
+  padding-top: 2%;
+  padding-left: 1%;
+  padding-right: 8%;
+  padding-bottom: 2%;
+  z-index: -1;
 }
 
 .subs {
   display: flex;
   flex-wrap: wrap;
 }
+.size {
+  margin-bottom: .5em;
+}
 
 .menu {
   width: 70%;
   margin: 0 auto;
-  border-left: 3px solid blue;
-  border-bottom: 3px solid blue;
-  border-right: 3px solid blue;
-  border-radius: 7px;
+  border-left: .3em solid blue;
+  border-bottom: .3em solid blue;
+  border-right: .3em solid blue;
+  border-radius: 1em;
+  padding: .2em;
+  background-color: white;
 }
 
 .modes {
-  width: 80px;
-  height: 60px;
-  border: 2px dashed black;
+  width: 5.5em;
+  margin: .2em;
+  height: 4em;
+  border: .15em dashed black;
   border-radius: 20%;
   display: inline-block;
 }
 
 .offset {
-  left: 55px;
+  left: .4em;
 }
 
 .walls {
-  width: 20px;
-  height: 80px;
-  border: 1px dashed black;
-  border-radius: 10px;
+  width: 1.3em;
+  height: 6em;
+  border: .13em dashed black;
+  border-radius: 1em;
   position: absolute !important;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 10px 90px;
+  background-size: .6em 7em;
 }
 
 .troops {
-  width: 80px;
-  height: 60px;
-  border: 2px dashed black;
+  width: 5.5em;
+  height: 4em;
+  border: .15em dashed black;
   border-radius: 20%;
   position: absolute !important;
   background-repeat: no-repeat;
 }
 
 .object {
-  width: 80px;
-  height: 60px;
-  border: 2px dashed black;
+  width: 5.5em;
+  height: 4em;
+  border: .15em dashed black;
   border-radius: 20%;
   position: absolute !important;
   background-repeat: no-repeat;
   background-image: url('../images/objects.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
 }
 
 .barrier {
-  background-position: 8px -3px;
+  background-position: .5em 0em;
 }
 
 .bio {
-  background-position: 8px -61px;
+  background-position: .5em -4em;
 }
 
 .bomb {
-  background-position: 8px -122px;
+  background-position: .5em -8.1em;
 }
 
 .crowd {
-  background-position: 8px -182px;
+  background-position: .5em -12em;
 }
 
 .fire {
-  background-position: 8px -242px;
+  background-position: .5em -16em;
 }
 
 .rads {
-  background-position: 8px -304px;
+  background-position: .5em -20.3em;
 }
 
 .rock {
-  background-position: 8px -362px;
+  background-position: .5em -24.3em;
 }
 
 .skull {
-  background-position: 8px -425px;
+  background-position: .5em -28.3em;
 }
 
 .lightning {
-  background-position: 8px -483px;
+  background-position: .5em -32.1em;
 }
 
 .table {
-  background-position: 8px -542px;
+  background-position: .5em -36em;
 }
 
 .axe {
   background-image: url('../images/axe.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .book {
   background-image: url('../images/book.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .bow {
   background-image: url('../images/bow.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .doctor {
   background-image: url('../images/doctor.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .knight {
   background-image: url('../images/knight.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .pistol {
   background-image: url('../images/pistol.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .shoe {
   background-image: url('../images/shoe.png');
-  background-size: 70px auto;
+  background-size: 4em auto;
 }
 
 .shotgun {
   background-image: url('../images/shotgun.png');
-  background-size: 90px auto;
+  background-size: 6em auto;
 }
 
 .shovel {
   background-image: url('../images/shovel.png');
-  background-size: 90px auto;
+  background-size: 6em auto;
 }
 
 .sword {
   background-image: url('../images/sword.png');
-  background-size: 130px auto;
+  background-size: 8em auto;
 }
 
 .door {
@@ -220,7 +214,7 @@ body {
 }
 
 .troops.lr {
-  background-position: 0px -140px;
+  background-position: 0 -8.3em;
 }
 
 .walls.lr {
@@ -228,7 +222,7 @@ body {
 }
 
 .troops.ll {
-  background-position: 0px -210px;
+  background-position: 0 -12.3em;
 }
 
 .walls.ll {
@@ -236,7 +230,7 @@ body {
 }
 
 .troops.l {
-  background-position: 0px -280px;
+  background-position: 0 -16.3em;
 }
 
 .walls.l {
@@ -244,7 +238,7 @@ body {
 }
 
 .troops.ul {
-  background-position: 0px -350px;
+  background-position: 0 -20.3em;
 }
 
 .walls.ul {
@@ -252,7 +246,7 @@ body {
 }
 
 .troops.ur {
-  background-position: 0px 0px;
+  background-position: 0 -.3em;
 }
 
 .walls.ur {
@@ -260,7 +254,7 @@ body {
 }
 
 .troops.r {
-  background-position: 0px -70px;
+  background-position: 0 -4.3em;
 }
 
 .walls.r {
@@ -268,149 +262,98 @@ body {
 }
 
 .shoe.r {
-  background-position: 5px -85px;
+  background-position: .5em -4.3em;
 }
 .shoe.lr {
-  background-position: 5px -155px;
+  background-position: .5em -8.3em;
 }
 .shoe.ll {
-  background-position: 5px -225px;
+  background-position: .5em -12.3em;
 }
 .shoe.l {
-  background-position: 5px -295px;
+  background-position: .5em -16.3em;
 }
 .shoe.ul {
-  background-position: 5px -365px;
+  background-position: .5em -20.3em;
 }
 .shoe.ur {
-  background-position: 5px -15px;
+  background-position: .5em -.3em;
 }
 
 .shotgun.r {
-  background-position: -5px -45px;
+  background-position: -.4em -3.5em;
 }
 .shotgun.lr {
-  background-position: -5px -100px;
+  background-position: -.4em -7.4em;
 }
 .shotgun.ll {
-  background-position: -5px -155px;
+  background-position: -.4em -11em;
 }
 .shotgun.l {
-  background-position: -5px -210px;
+  background-position: -.4em -14.5em;
 }
 .shotgun.ul {
-  background-position: -5px -265px;
+  background-position: -.4em -18.2em;
 }
 .shotgun.ur {
-  background-position: -5px 10px;
+  background-position: -.4em 0;
 }
 
 .shovel.r {
-  background-position: -10px -70px;
+  background-position: -.3em -4.5em;
 }
 .shovel.lr {
-  background-position: -10px -135px;
+  background-position: -.3em -9em;
 }
 .shovel.ll {
-  background-position: -10px -195px;
+  background-position: -.3em -12.9em;
 }
 .shovel.l {
-  background-position: -10px -255px;
+  background-position: -.3em -17.3em;
 }
 .shovel.ul {
-  background-position: -10px -320px;
+  background-position: -.3em -21.5em;
 }
 .shovel.ur {
-  background-position: -10px -10px;
+  background-position: -.3em -.4em;
 }
 
 .sword.r {
-  background-position: -20px -60px;
+  background-position: -1.2em -3.7em;
 }
 .sword.lr {
-  background-position: -20px -115px;
+  background-position: -1.2em -7.3em;
 }
 .sword.ll {
-  background-position: -20px -175px;
+  background-position: -1.2em -10.5em;
 }
 .sword.l {
-  background-position: -20px -230px;
+  background-position: -1.2em -14em;
 }
 .sword.ul {
-  background-position: -20px -290px;
+  background-position: -1.2em -17.6em;
 }
 .sword.ur {
-  background-position: -20px 0px;
+  background-position: -1.2em -0.4em;
 }
 
 .subItem {
-  width: 80px;
-  height: 60px;
-  border: 2px dashed black;
+  width: 5.5em;
+  height: 4em;
+  border: .15em dashed black;
   border-radius: 20%;
   background-repeat: no-repeat;
-  background-size: 70px auto;
-}
-
-.subItem.axe {
-  background-image: url('../images/troops.png');
-  background-position: -0px -5px;
-}
-
-.subItem.book {
-  background-image: url('../images/troops.png');
-  background-position: -0px -75px;
-}
-
-.subItem.bow {
-  background-image: url('../images/troops.png');
-  background-position: -0px -145px;
-}
-
-.subItem.doctor {
-  background-image: url('../images/troops.png');
-  background-position: -0px -210px;
-}
-
-.subItem.knight {
-  background-image: url('../images/troops.png');
-  background-position: -0px -280px;
-}
-
-.subItem.pistol {
-  background-image: url('../images/troops.png');
-  background-position: 5px -355px;
-}
-
-.subItem.shoe {
-  background-image: url('../images/troops.png');
-  background-position: 5px -425px;
-}
-
-.subItem.shotgun {
-  background-image: url('../images/troops.png');
-  background-position: 5px -495px;
-}
-
-.subItem.shovel {
-  background-image: url('../images/troops.png');
-  background-position: 0px -565px;
-}
-
-.subItem.sword {
-  background-image: url('../images/troops.png');
-  background-position: 0px -630px;
 }
 
 .subItem.solid, .subItem.weak, .subItem.door, .subItem.window, .subItem.low, .subItem.open {
   background-position: center;
-  background-size: 10px 60px;
+  background-size: .7em 4em;
 }
 
 .subItem.lightning, .subItem.barrier, .subItem.rads, .subItem.bio, .subItem.bomb, .subItem.rock, .subItem.crowd, .subItem.fire, .subItem.skull, .subItem.table {
   background-repeat: no-repeat;
   background-image: url('../images/objects.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
 }
 
 .hidden {
@@ -419,47 +362,47 @@ body {
 
 .back {
   background-image: url('../images/back.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
 }
 
 .mode-troops {
   background-image: url('../images/helm.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mode-walls {
   background-image: url('../images/wall.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mode-object {
   background-image: url('../images/cube.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mode-rotate {
   background-image: url('../images/rotate.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mode-move {
   background-image: url('../images/move.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mode-remove {
   background-image: url('../images/remove.png');
-  background-size: 60px auto;
+  background-size: 4em auto;
   background-repeat: no-repeat;
   background-position: center;
 }
