@@ -1,19 +1,15 @@
-var hexTemplate = '-----x: {{trueX}} y: {{y}} {{#clicked}} A {{/clicked}}';
+var hexTemplate = '({{trueX}}, {{y}}) {{#clicked}} A {{/clicked}} {{text}}';
 
 var hexClassTemplate =
 'hex ' +
-'{{#offset}} offset {{/offset}}';
+'{{#offset}} offset {{/offset}} {{piece}}';
 
 var menuTemplate =
-'<input type="number" value ="{{height}}" class="js-height">' +
-'<input type="number" value ="{{width}}" class="js-width">';
+'rows: <input type="number" value ="{{height}}" class="js-height">' +
+'columns: <input type="number" value ="{{width}}" class="js-width">';
 
-var modeTemplate = '{{name}} {{#checked }} !!! {{/checked}}';
-
-var modeClassTemplate = 'modes {{#hidden}} hidden {{/hidden}}';
-
-var subTemplate = '{{name}} {{#checked}} !!! {{/checked}}';
+var modeClassTemplate = 'modes {{#hidden}} hidden {{/hidden}} mode-{{name}} {{#active}} active {{/active}}';
 
 var subClassTemplate = 'subItem ' +
   '{{#hidden}} hidden {{/hidden}}' +
-  '{{name}} js-{{name}}';
+  '{{name}} js-{{name}} {{#checked}} active {{/checked}}';

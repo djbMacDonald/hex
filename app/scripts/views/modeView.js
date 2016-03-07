@@ -23,18 +23,28 @@ var ModeView = Backbone.View.extend({
   },
 
   render: function(){
-    var compiled = Mustache.render(modeTemplate, this.model.attributes);
+    var compiled = $('<div>');
     var modeClass = Mustache.render(modeClassTemplate, this.model.attributes);
     this.$el.html(compiled).attr('Class', modeClass);
     return this;
   },
 
   check: function(){
-    _(this.parent.children).each(function(view) {
-      view.model.set({'hidden': true});
-      view.unRenderSub();
+    _(this.model.collection.models).each(function(model){
+      model.set('active', false);
     });
-    this.renderSub();
+    this.model.set('active', true);
+    $('.piece').draggable();
+    $('.piece').draggable('destroy');
+    if (this.model.get('name') === 'move') {
+      $('.piece').draggable();
+    } else if (this.model.get('name') !== 'rotate' && this.model.get('name') !== 'remove') {
+      _(this.parent.children).each(function(view) {
+        view.model.set({'hidden': true});
+        view.unRenderSub();
+      });
+      this.renderSub();
+    }
   },
 
   renderSub: function() {

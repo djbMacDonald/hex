@@ -3,7 +3,7 @@ var BoardModel = Backbone.Model.extend({
     this.set({width: 4});
     this.set({height: 6});
     this.set({modes: [
-      {name: 'troops', url: 'a', subItems: [
+      {name: 'troops', subItems: [
         'axe',
         'book',
         'bow',
@@ -14,17 +14,18 @@ var BoardModel = Backbone.Model.extend({
         'shotgun',
         'shovel',
         'sword',
-        'knight',
         'back'
       ]},
-      {name: 'walls', url: 'b', subItems: [
+      {name: 'walls', subItems: [
         'solid',
         'weak',
         'low',
         'door',
+        'window',
+        'open',
         'back'
       ]},
-      {name: 'object', url: 'd', subItems: [
+      {name: 'object', subItems: [
         'barrier',
         'bio',
         'bomb',
@@ -36,8 +37,10 @@ var BoardModel = Backbone.Model.extend({
         'lightning',
         'table',
         'back'
-      ]}
-      ]
-    });
+      ]},
+      {name: 'rotate', subItems: []},
+      {name: 'move', subItems: []},
+      {name: 'remove', subItems: []}
+    ]});
   }
 });

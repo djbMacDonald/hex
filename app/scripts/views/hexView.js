@@ -17,5 +17,14 @@ var HexView = Backbone.View.extend({
 
   modify: function(){
     this.model.set({clicked: !this.model.get('clicked')});
+    var piece;
+    _(this.options.parent.children).each(function(mode){
+      _(mode.subs.models).each(function(item){
+        if (item.get('checked')){
+          piece = item.get('name');
+        }
+      });
+    });
+    this.model.set('piece', piece);
   }
 });

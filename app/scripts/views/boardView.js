@@ -2,7 +2,8 @@ var BoardView = Backbone.View.extend({
   el: $('.js-board'),
   events: {
     'change .js-height': 'changeHeight',
-    'change .js-width': 'changeWidth'
+    'change .js-width': 'changeWidth',
+    'click .js-grid': 'addPiece'
   },
   initialize: function(){
     _.bindAll(this, 'render', 'addHex', 'appendHex');
@@ -57,11 +58,83 @@ var BoardView = Backbone.View.extend({
   },
   appendHex: function(hexModel){
     var hexView = new HexView({
-      model: hexModel
+      model: hexModel,
+      parent: this
     });
     $('.js-grid', this.el).append(hexView.render().el);
     if (hexModel.get('x') + 1 === this.model.get('width')) {
       $('.js-grid', this.el).append('<br>');
+    }
+  },
+  addPiece: function(e){
+    var option, type;
+    _(this.children).each(function(mode){
+      if (mode.model.get('active')) {
+        option = mode.model.get('name')
+      }
+      _(mode.subs.models).each(function(item){
+        if (item.get('checked')){
+          type = item.get('name');
+        }
+      });
+    });
+    if (type && option !== 'rotate' && option !== 'move' && option !== 'remove' && type !== 'back') {
+      var $piece = $('<div>');
+      $piece.addClass('piece');
+      $piece.addClass(option);
+      $piece.addClass(type);
+      if (option === 'walls') {
+        $piece.addClass('r');
+      } else {
+        $piece.addClass('ur');
+      }
+      if (option === 'walls') {
+        $piece.css({
+        'left': e.pageX - 10,
+        'top': e.pageY - 40
+      });
+      } else {
+        $piece.css({
+        'left': e.pageX - 40,
+        'top': e.pageY - 40
+      });
+      }
+      $('body').append($piece);
+      var self = this;
+      $piece.click(function(){
+        self.modify($(this));
+      });
+    }
+  },
+  modify: function($piece){
+    var option, type;
+    _(this.children).each(function(mode){
+      if (mode.model.get('active')) {
+        option = mode.model.get('name')
+      }
+    });
+    if (option === 'remove') {
+      $piece.remove();
+    } else if (option === 'rotate'){
+      if ($piece.hasClass('ur')){
+        $piece.removeClass('ur');
+        $piece.addClass('r');
+      } else if ($piece.hasClass('r')){
+        $piece.removeClass('r');
+        $piece.addClass('lr');
+      } else if ($piece.hasClass('lr')){
+        $piece.removeClass('lr');
+        $piece.addClass('ll');
+      } else if ($piece.hasClass('ll')){
+        $piece.removeClass('ll');
+        $piece.addClass('l');
+      } else if ($piece.hasClass('l')){
+        $piece.removeClass('l');
+        $piece.addClass('ul');
+      } else if ($piece.hasClass('ul')){
+        $piece.removeClass('ul');
+        $piece.addClass('ur');
+      }
     }
   }
 });
